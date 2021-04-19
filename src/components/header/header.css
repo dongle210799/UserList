@@ -1,0 +1,13 @@
+.header{
+    display: flex;
+    background-color: rgb(121, 121, 223);
+    overflow:  hidden;
+}
+.title{
+    font-size: 24px;
+    padding: 0px 20px;
+    color: white;
+}
+.search{
+    width: 70%;
+}

@@ -1,0 +1,24 @@
+.item_user img{
+/* width: 30%; */
+height: 80%;
+}
+.item_user_content{
+    padding-left: 30px;
+}
+.item_user_name{
+    font-size: 30px;
+}
+.item_user_icon_loadmore{
+    float: left;
+    
+}
+.item_user_icon_loadmore i {
+    font-size: initial;
+    
+}
+.item_user_icon_loadmore i:hover{
+    color: lightseagreen;
+}
+.item_user_loadmore{
+    float: left;
+}
