@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import ItemUser from "../itemlist/index";
 import "./Userlist.css";
-import { getlist } from "../../../service/userList.module";
+import { getListPending, getListUser } from "../../../actions/user";
 export default function Userlist() {
-  const [listUser, setListUser] = useState([]);
+  const dispatch = useDispatch();
+  const users = useSelector((state) => state.task.listUser);
+  console.log("users", users);
+  const [dataUser, setDataUser] = useState([]);
   useEffect(() => {
     getListUser();
+
+    dispatch(getListPending());
   }, []);
   const getListUser = async () => {
     try {
-      const res = await getlist();
-
-      setListUser(res.data.results);
+      setDataUser(users);
     } catch (error) {
       console.log(error);
     }
@@ -27,7 +31,7 @@ export default function Userlist() {
   };
   return (
     <div>
-      <ul>{showList(listUser)}</ul>
+      <ul>{showList(dataUser)}</ul>
     </div>
   );
 }
